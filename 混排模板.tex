@@ -1,0 +1,58 @@
+% !TeX encoding = UTF-8
+% !TeX program = LuaLaTeX
+
+\documentclass{article}
+
+\usepackage{luatexja-ruby}
+\ltjsetruby{size=0.8}            %设置振假名字号
+\ltjsetruby{fontcmd=\gtfamily}   %设置振假名字体
+\ltjsetruby{mode=00}             %设置振假名的「進入」和「突出」模式
+
+\usepackage{luatexja-fontspec}
+\setmainjfont{SIMSUN.TTC}
+
+\usepackage[top=0.6in , bottom =0.7in , left=0.6in , right =0.6in]{geometry}
+%设置页边距
+
+\usepackage{color}
+
+\begin{document}
+
+\twocolumn                       %双栏模式，用于中日文对照
+\large
+\linespread{2.2}
+\selectfont
+
+\ruby{蒼}{あお}い\ruby{風}{かぜ}がいま \ruby{胸}{むね}のドアを\ruby{叩}{たた}いても
+
+\ruby{私}{わたし}だけを ただ\ruby{見}{み}つめて \ruby{微笑}{ほほえ}んでるあなた
+
+そっと ふれるもの もとめることに\ruby{夢中}{むち}ゅうで
+
+\ruby{運命}{うんめい}さえ まだ\ruby{知}{し}らない いたいけな\ruby{瞳}{ひとみ}
+
+だけどいつか\ruby{気付}{きづ}くでしょう その\ruby{背中}{せなか}には
+
+\ruby{遥}{はる}か\ruby{未来}{みらい}めざすための\ruby{羽根}{はね}があること
+
+\newpage           %强制分栏
+
+{
+
+\ruby{此刻蒼藍的風 正輕輕叩醒我的心門}{\textcolor{white}{spacing}}
+
+但你只是凝視著我 對我微笑著
+
+手指輕觸 我不斷熱衷地追尋著
+
+你那連命運都不知道的 令人憐愛的眼神
+
+但是總有一天會發覺到吧 就在你的背後
+
+有那為了遙遠的未來而萌發的羽翼存在著
+
+}
+
+\section*{功能介绍}
+
+\end{document}
