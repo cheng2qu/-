@@ -1,0 +1,127 @@
+% 格式文件
+% !TeX encoding = UTF-8
+% !TeX program = LuaLaTeX
+
+\documentclass{tufte-handout}
+
+%%% 设置页面布局
+% 设置页边距
+\usepackage{geometry}
+% 设置缩进
+\setlength{\parindent}{0pt}
+% 设置段落间距
+\setlength{\parskip}{1.5em}
+% 设置颜色
+\usepackage{color}
+
+% 删除线插件
+\usepackage[normalem]{ulem}
+% 插图插件
+\usepackage{graphicx}
+
+% 设置自定义列表图标
+% 自定义星星图标
+\newcommand{\parStar}{%
+    \par\noindent
+    \smash{%
+    \makebox[0pt]{%
+    \raisebox{\dimexpr-.5\height+.3\baselineskip}{%
+    \includegraphics[height=10pt]{itemStar.png}%
+      }%
+    }%
+  }%
+  \hspace*{\parindent}}
+
+% 自定义星球图标
+\newcommand{\parPlant}{%
+    \par\noindent
+    \smash{%
+    \makebox[0pt]{%
+    \raisebox{\dimexpr-.5\height+.3\baselineskip}{%
+    \includegraphics[height=10pt]{itemPlant.png}%
+      }%
+    }%
+  }%
+  \hspace*{\parindent}}
+  
+% 自定义野花图标
+\newcommand{\parFlw}{%
+    \par\noindent
+    \smash{%
+    \makebox[0pt]{%
+    \raisebox{\dimexpr-.5\height+.3\baselineskip}{%
+    \includegraphics[height=10pt]{itemFlw.png}%
+      }%
+    }%
+  }%
+  \hspace*{\parindent}}
+%%% CJK language setting
+
+%%% xeCJK package under XeTeX, suitable for Chinese doc
+% \usepackage[space]{xeCJK}
+%% Chinese as the main language
+% \setCJKmainfont{Noto Serif CJK SC}
+% \setCJKsansfont{Noto Sans CJK SC}
+
+%% Define fonts for Japanese and Korean
+% \newCJKfontfamily\japanesefont{Noto Serif CJK JP}
+
+%%% LuaTexja package under LuaTeX, suitable for Japanese doc
+\usepackage{luatexja}            % Basic package
+\usepackage{luatexja-ruby}       % 调用振假名插件
+\ltjsetruby{size=0.6}            % 设置振假名字号
+%\ltjsetruby{fontcmd=\gtfamily}  % 设置振假名字体
+\ltjsetruby{mode=00}             % 设置振假名的「進入」和「突出」模式
+
+%\usepackage{pxrubrica}          % 同为振假名插件
+
+\usepackage{luatexja-fontspec}   % 字体设置插件
+% 为了实现中日双语混排，需要调用中文字体
+\setmainjfont{SIMSUN.TTC}[AutoFakeBold]        % 调用嵌入的简体宋体
+
+% 修改页眉页脚默认字体
+\usepackage{fancyhdr}
+\newcommand{\cjkfont}{%
+\fontfamily{SIMSUN.TTC}\fontseries{b}\fontsize{9}{11}\selectfont}
+% 定义页眉页脚使用的文档部件
+\usepackage{titlesec}
+\renewcommand{\sectionmark}[1]{%
+\markboth{#1}{}}
+
+%%% 其他工具包
+% 自定义章节名称插件
+\usepackage{titlesec}
+% 页码格式
+\usepackage[utf8]{inputenc}
+
+% 网页超链接插件
+\usepackage{hyperref}
+% 超链接高亮颜色设置
+% 加载色彩工具包
+\usepackage[svgnames]{xcolor}
+% 自定义色彩
+\definecolor{VolcanoGray}{RGB}{147, 159, 174}
+\definecolor{RossRed}{RGB}{146, 71, 62}
+\definecolor{Baobab}{RGB}{120, 140, 97}
+\definecolor{FoxOrange}{RGB}{239, 171, 93}
+\definecolor{ClothGreen}{RGB}{159, 174, 166}
+\definecolor{SmokeBlue}{RGB}{79, 129, 155}
+% 色彩调用-超链接文本
+\hypersetup{
+    colorlinks=true,
+    linkcolor=SmokeBlue,
+    filecolor=RossRed,      
+    urlcolor=SmokeBlue,
+}
+% 色彩调用-页边注（sidenote有编号，marginnote无编号）
+\setsidenotefont{\color{VolcanoGray}\footnotesize}
+\setmarginnotefont{\color{VolcanoGray}\footnotesize}
+
+% Spacing setting
+\large
+\selectfont
+
+% Date in Chinese
+\renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
+
+
